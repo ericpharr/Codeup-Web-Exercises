@@ -1,0 +1,50 @@
+.fancy-header{
+		color:purple;
+		text-decoration: underline;
+		text-align: center;
+	}
+
+h1, h2, h3, h4, h5, h6 {
+	color: #225e6e;
+	background-color: #ebebeb;
+	border:	 1px solid black;
+}
+
+body {
+	background-color: gray; 
+	background-image: url("/img/bg.jpeg");
+	background-repeat: no-repeat;
+	background-position: center;
+	font-family: sans-serif;
+}
+
+ul {
+	list-style: circle;
+}
+
+li {
+	color: white;
+}
+
+td, tr {
+	font-size: 18;
+	color: white;
+}
+
+a:link {
+	color: white;
+}
+
+a:visited{
+	color: orangered;
+}
+
+a:hover {
+	color:blue;
+}
+
+a:active{
+	color: black;
+}
+
+

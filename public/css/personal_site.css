@@ -1,0 +1,23 @@
+	li.social_link>a {
+		padding: 8px 1px 1px 9px;
+	}
+
+	.navbar li.social_link a:hover {
+		background-color: #222222;
+	}
+
+
+	.navbar li.social_link a:active {
+		background-color: #222222;
+	}
+
+	#social_icon {
+		width:35px;
+	}
+
+	img.frontpagepic {
+		border-radius: 50%;
+		filter: blur(3px);
+		filter: contrast(160%);
+		filter: opacity(70%);
+	}

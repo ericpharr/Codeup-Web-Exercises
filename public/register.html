@@ -1,0 +1,44 @@
+<!DOCTYPE <html>
+<head>
+	<title>Register</title>
+</head>
+<body>
+	<main>
+		<h2>Registration</h2>
+		<form type="POST" action="https://requestb.in/15jogga1">
+			<!-- name -->
+			<div>
+				<label for="name">Name:</label>
+				<input id="name" type="text" name="name" autofocus required>
+			</div>
+			<!-- email -->
+			<div>
+				<label for="email">Email:</label>
+				<input id="email" type="email" name="email" placeholder="Enter email" required>
+			</div>
+			<!-- password -->
+			<div>
+				<label for="password">Password:</label>
+				<input id="password" type="password" name="password" placeholder="Enter password" required>
+
+			</div>
+			<!-- password confirm -->
+			<div>
+				<label for="confirm">Confirm Password:</label>
+				<input id="confirm" type="password" name="confirm" placeholder="Re-enter password" required>
+			</div>
+			<!-- sign up for newsletter / checkbox default-->
+			<div>
+				<label>
+					<input name="newsletter_signup" type="checkbox" checked>
+					Sign up for newsletter?
+				</label>
+			</div>
+			<br>
+			<div>
+				<button type="submit">Register</button>
+			</div>
+		</form>
+	</main>
+</body>
+</html>

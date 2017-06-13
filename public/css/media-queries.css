@@ -1,0 +1,86 @@
+body {
+	font-family: sans-serif;
+}
+
+.header-img img	{
+    	width: 100%;
+}
+
+@media screen and (min-width:340px) and (max-width: 700px)	{
+    .hidden-on-mobile {
+        background-color: #ccffff;
+        border: 1px solid #cbcbcb;
+        text-align: center;
+        padding: 10px;
+        width: 100%;
+    }
+
+
+    .nav-links {
+    	padding: 0px;
+    	display: block;
+    	list-style-type: none;
+    }
+
+    .nav-links li {
+    	background-color: #ccc;
+    	margin-bottom: 10px;
+    	padding: 10px;
+    	text-align: center;
+    	display: block;
+    	width: 100%;
+    }
+
+    /*.header-img img	{
+    	width: 100%;
+    }*/
+}
+
+@media screen and (min-width:700px) {
+
+	body {
+		max-width: 900px;
+		margin: 0 10%;
+
+	}
+    .hidden-on-mobile {
+        display: none;
+
+    }
+
+    h1 {
+    	width: 60%;
+    	float: left;
+    }
+
+    ul {
+    	display: inline-block;
+    	float:  right;
+    	/*position: relative;*/
+    }
+
+    li {
+    	display: inline-block;
+    	float: top;
+    	padding: 10px;
+    }
+
+
+    .main {
+    	width: 71%;
+    	float: left;
+    	padding: 2%;
+    }
+
+    .sub-section {
+    	width: 21%;
+    	padding:2%;
+    	float: left;
+    }
+
+    footer {
+    	position: absolute;
+    	bottom: -100px;
+
+    }
+}

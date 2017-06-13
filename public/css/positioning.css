@@ -1,0 +1,90 @@
+#red {
+	background-color: red;
+
+}
+
+#orange {
+	background-color: orange;
+
+}
+
+#yellow {
+	background-color: yellow;
+
+}
+
+#green {
+	background-color: green;
+
+}
+
+#blue{
+	background-color: blue;
+
+}
+	
+#violet {
+	background-color: violet;
+
+}
+
+.box {
+	border: 1px solid black;
+	height: 50px;
+	width: 50px;
+	padding: 10px;
+	margin-right: 50px;
+	margin-top: 50px;
+	color: white;
+	font-weight: bold;
+	position:relative;
+	float: left;
+}
+
+.box>img {
+	position:absolute;
+	right: -50%;
+	top: -50%;
+}
+
+.box:nth-child(3n + 2) {
+	clear:left;
+}
+
+/*.box:hover {
+	height: 100px;
+	width: 300px;
+	font-size: 40pt;
+	border: 4px solid black;
+	transition: height .2s, width .05s ease-in-out;
+}
+
+#red:hover{
+	margin-left: 60px;
+}
+
+#orange:hover{
+	margin-left: 90px;
+
+}
+
+#yellow:hover{
+	margin-left: 120px;
+
+}
+
+#green:hover{
+	margin-left: 150px;
+
+}
+
+#blue:hover{
+	margin-left: 180px;
+
+}
+#violet:hover{
+	margin-left: 210px;
+
+}*/
+
+
