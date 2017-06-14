@@ -106,9 +106,9 @@ if (userNumber % 2 == 0){
 	alert('Your number is odd');
 }
 
-alert("Your number plus 100 is " + userNumber + 100);
+// alert("Your number plus 100 is " + userNumber + 100);
 
-if (userNumber > 0)
+// if (userNumber > 0)
 
 
 
