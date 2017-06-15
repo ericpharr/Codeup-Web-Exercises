@@ -55,8 +55,6 @@ var bills = [{
 	total: 320
 }]
 
-
-
 for (var i=0; i < bills.length; i++) {
 	if (bills[i].total < 200) {
 		console.log(bills[i].name + " spent " + bills[i].total + " and got no discount.");
@@ -72,6 +70,8 @@ if (flipACoin ==0){
 } else {
 	console.log("Buy a house")
 }
+
+(flipACoin == 0) ? "Buy a car" : "Buy a house";
 
 var luckyNumber = Math.floor(Math.random()* 6)
 
@@ -100,15 +100,26 @@ alert("Would you like to enter a number?")
 
 var userNumber = prompt("Enter a number");
 
-if (userNumber % 2 == 0){
-	alert('Your number is even');
+if (isNaN(userNumber)){
+	alert("You didn't enter a number!")
 } else {
-	alert('Your number is odd');
+	if (userNumber % 2 == 0){
+		alert('Your number is even');
+	} else {
+		alert('Your number is odd');
+	}
+	// var num = Number(userNumber) + 100
+
+	alert("Your number plus 100 is " + (parseFloat(userNumber) + 100));
+	
+	if (userNumber > 0) {
+		alert('Your number is positive');
+	} else {
+		alert("Your number is negative");
+	}
 }
 
-// alert("Your number plus 100 is " + userNumber + 100);
 
-// if (userNumber > 0)
 
 
 
