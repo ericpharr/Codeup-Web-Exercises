@@ -26,6 +26,6 @@
     planetsArray.push("</ul>");
     planetsArray.unshift("<ul>");
 
-    console.log(planetsArray.join(""))
+    console.log(planetsArray.join(""));
 
 })();

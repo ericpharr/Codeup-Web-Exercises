@@ -102,7 +102,6 @@ function doMath(operator, a, b) {
 	
 }
 
-subtract(4, 5)
 
 
 

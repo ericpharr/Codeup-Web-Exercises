@@ -42,17 +42,50 @@ books.forEach(function (book, index){
 
 books.forEach(function (book){
 	book.available = true;
+	book.dateAvailable = "now";
 	book.rent = function () {
 		var dateAvailable = new Date();
 		book.available = false;
 		book.dateAvailable = dateAvailable.setDate(dateAvailable.getDate()+14);
+		book.dateAvailable = dateAvailable.toLocaleDateString();
 	};
 	book.returned = function(){
 		book.available = true;
 		book.dateAvailable = "now";
 	}
+});
 
-})
+var dogs = [{
+	breed: "chihuahua",
+	weightInPounds: 10,
+	age: 4,
+	color: "brown",
+	sterilized: false,
+	shotRecords: {
+		date: "5/17/2017",
+		typeOfShot: "rabies"
+	}
+}]
+
+dogs.forEach(function(dog) {
+	dog.bark = function() {
+		console.log("Woof!");
+	},
+	dog.getOlder = function() {
+		dog.age++;
+	},
+	dog.fix = function(){
+		sterilized = true;
+	},
+	dog.getShot = function(date, typeOfShot){
+		dog.date = date;
+		dog.typeOfShot = typeOfShot;
+	}	
+});
+
+
+
+
 </script>
 </body>
 </html>
