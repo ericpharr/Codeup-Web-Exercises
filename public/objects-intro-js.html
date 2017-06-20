@@ -1,0 +1,58 @@
+<html>
+<head>
+	<title>Objects Intro</title>
+</head>
+<body>
+<script type="text/javascript" src="js/objects.js"></script>
+<script type="text/javascript">
+"use strict";
+
+// todo:
+// Create an array of objects that represent books.
+// Each book should have a title and an author property.
+// The author property should be an object with a firstName and lastName.
+// Be creative and add at least 5 books to the array
+var books = [
+	{title: "The Grapes of Wrath", author: {firstName: "John", lastName: "Steinbeck"}},
+	{title: "The Great Gatsby", author: {firstName: "F Scott", lastName: "Fitzgerald"}},
+	{title: "The Jungle", author: {firstName: "Upton", lastName: "Sinclair"}},
+	{title: "Babbit", author: {firstName: "Sinclair", lastName: "Lewis"}},
+	{title: "Capital", author: {firstName: "Karl", lastName: "Marx"}},
+];
+
+
+
+
+// log out the books array
+console.log(books);
+
+// todo:
+// Loop through the array of books using .forEach and print out the specified information about each one.
+// start loop here
+	
+books.forEach(function (book, index){
+    console.log("Book #" + (index + 1));
+    console.log("Title: " + book.title);
+	console.log("Author: " + book.author.firstName + " " + book.author.lastName);
+    console.log("---");
+});
+
+// end loop here
+
+
+books.forEach(function (book){
+	book.available = true;
+	book.rent = function () {
+		var dateAvailable = new Date();
+		book.available = false;
+		book.dateAvailable = dateAvailable.setDate(dateAvailable.getDate()+14);
+	};
+	book.returned = function(){
+		book.available = true;
+		book.dateAvailable = "now";
+	}
+
+})
+</script>
+</body>
+</html>
