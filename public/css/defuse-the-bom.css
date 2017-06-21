@@ -1,0 +1,10 @@
+.container .row h1.jumbotron {
+	background-color: #36ff2f;
+	opacity: .75;
+	color: black;
+	font-family: 'Orbitron', sans-serif;
+}
+
+#defuser.btn {
+	font-family: 'Orbitron';
+}

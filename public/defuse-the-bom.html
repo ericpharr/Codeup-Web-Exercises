@@ -3,17 +3,25 @@
 <head>
     <meta charset="utf-8">
     <title>Defuse the BOM</title>
+    <link rel="stylesheet" type="text/css" href="css/slate.bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="css/defuse-the-bom.css">
+    <link href='https://fonts.googleapis.com/css?family=Orbitron' rel='stylesheet' type='text/css'>
 </head>
+
 <body>
-
-<h2 id="message">This BOM will self destruct in <span id="timer">5</span> seconds...</h2>
-<button id="defuser">Defuse the BOM</button>
-
+    <main class='container'>
+        <div class='row'>
+            <h1 id="message" class="jumbotron col-md-6 col-md-offset-3">This BOM will self destruct in <span id="timer">5</span> <br>seconds...</h1>
+        </div>
+        <div class='row'>
+            <button id="defuser" class='btn btn-default btn-lg btn-danger col-md-offset-5'>Defuse the BOM</button>
+        </div>
+    </main>
 <script>
 (function() {
     "use strict";
 
-    var detonationTimer = 5;
+    var detonationTimer = 500;
 
     // TODO: This function needs to be called once every second
     var bom = setInterval(function updateTimer() {
@@ -21,11 +29,11 @@
             alert('EXTERMINATE!');
             document.body.innerHTML = '';
         } else if (detonationTimer > 0) {
-            document.getElementById('timer').innerHTML = detonationTimer;
+            document.getElementById('timer').innerHTML = (detonationTimer/100).toFixed(2);
         }
 
         detonationTimer--;
-    }, 1000)  
+    }, 10)  
 
     // TODO: When this function runs, it needs to
     // cancel the interval/timeout for updateTimer()
