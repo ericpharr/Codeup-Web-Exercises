@@ -5,7 +5,7 @@ var inputbox = document.getElementsByClassName('inputbox');
 var a;
 var b;
 var operator;
-var inputb;
+
 
 
 buttons.forEach(function(button) {
