@@ -11,16 +11,16 @@ buttons.forEach(function(button) {
 		clear();
 		} else {
 		//if (input.length == 0 /* || isNaN(input[input.length - 1])*/){
-			if (!isNaN(button.innerText)) {
+			if (!isNaN(button.innerText) && input.length == 1){
+				input = [];
+				newInput = button.innerText;
+				inputbox[0].value = newInput;
+			} else if (!isNaN(button.innerText)) {
 					newInput += button.innerText;
 					inputbox[0].value = newInput;
 			} else {
 				selectOperator(button.innerText);
 			}
-		//} else if (input.length != 0) {
-
-
-		//}
 		}
 	})
 })
@@ -28,45 +28,40 @@ buttons.forEach(function(button) {
 function selectOperator(symbol){
 	switch(symbol) {
 		case "+":
-			if (newInput.length > 0){
-				input.push(newInput, "+");
-				newInput = "";
-			} else {
-				identity(input);
-			}
+			basicOperator("+");
 			break;
 		case "-":
-			input.push(newInput, "-");
-			newInput = "";
+			basicOperator("-");
 			break;
 		case "÷":
-			input.push(newInput, "÷");
-			newInput = "";
+			basicOperator("÷");
 			break;
 		case "x": 
-			input.push(newInput, "x");
-			newInput = "";
+			basicOperator("x");
 			break;
 		case "=":
-			if (input.length > 1) {
+			if (input.length > 0 && newInput.length > 0) {
 				input.push(newInput);
 				input = equals(input);
-				inputbox[0].value = input;
+				inputbox[0].value = input.toString();
 				newInput = "";
 			} else {
 				identity(input);
 			}
+			break;
 		case "%":
-			// if (input == a){
-			// 	operator = percent;
-			// 	equals();
-			// 	break;
-			// } else {
-			// 	break;
+			specialOperator(percent);
+			break;
 			// }
 		case "+/-":
-			// opposite();
-			// break;
+			specialOperator(opposite);
+			break;
+		case ".":
+			if (newInput.match("\\.") != "."){
+				newInput += ".";
+				inputbox[0].value = newInput;
+			}
+			break;
 	}
 }	
 
@@ -75,6 +70,18 @@ function clear(){
 	newInput = "";
 	// symbol = "";
 	inputbox[0].value = "";
+}
+
+function basicOperator(symbol) {
+	if (newInput.length > 0){
+		input.push(newInput, symbol);
+		newInput = "";
+	} else if (input[input.length - 1] != symbol){
+		input[input.length - 1] = symbol;
+		identity(input);
+	} else {
+		identity(input);
+	}
 }
 
 function equals(x) {
@@ -100,7 +107,13 @@ function equals(x) {
 		}
 	}
 
-	return x;	
+	return x;//[parseFloat(x[0].toPrecision(15).toString())];	
+}
+
+function specialOperator(operator){
+	newInput = operator(parseFloat(newInput)).toString();
+	inputbox[0].value = newInput.toString();
+	// newInput = "";
 }
 
 function percent(n) {
