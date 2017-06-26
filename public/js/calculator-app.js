@@ -1,3 +1,4 @@
+"use strict";
 /*
 
 Variables:
@@ -121,7 +122,9 @@ function basicOperator(symbol) {					//Basic operator function takes operator sy
 	if (newInput.length > 0){
 		input.push(newInput, symbol);
 		newInput = "";
-	} else if (input[input.length - 1] != symbol){
+	} else if (input.length == 1) {
+		input.push(symbol);
+	}else if (input.length > 1 &&input[input.length - 1] != symbol){
 		input[input.length - 1] = symbol;
 		identity(input);
 	} else {
@@ -177,8 +180,13 @@ Most extensions to calculator functionality can go here.
 */
 
 function specialOperator(operator){
-	newInput = operator(parseFloat(newInput)).toString();
-	inputbox.value = newInput.toString();
+	if (newInput.length > 0) {
+		newInput = operator(parseFloat(newInput)).toString();
+		inputbox.value = newInput.toString();
+	} else if (input.length == 1) {
+		input = [operator(parseFloat(input).toString())];
+		inputbox.value = input.toString();
+	}
 }
 
 function percent(n) {
@@ -192,3 +200,21 @@ function opposite(n) {
 function identity(n){
 	return n;
 }
+
+function sqrt(n) {
+	Math.sqrt(n);
+}
+
+function cubert(n) {
+	Math.pow(n, 1/3);
+}
+
+function ythrootx (x, y) {
+	Math.pow(n, 1/y);
+}
+
+function ln(n) {
+	Math.log(n);
+}
+
+function 
