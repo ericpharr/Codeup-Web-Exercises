@@ -104,6 +104,10 @@ function equals() {
 		input = evaluate(input);
 		inputbox.value = input.toString();
 		newInput = "";
+	} else if (input.length % 2 == 1){
+		input = evaluate(input);
+		inputbox.value = input.toString();
+		newInput = "";
 	} else {
 		identity(input);
 	}
@@ -181,11 +185,15 @@ Most extensions to calculator functionality can go here.
 
 function specialOperator(operator){
 	if (newInput.length > 0) {
-		newInput = operator(parseFloat(newInput)).toString();
-		inputbox.value = newInput.toString();
+		input.push(parseFloat(operator(newInput).toPrecision(15)).toString());
+		inputbox.value = parseFloat(operator(newInput).toPrecision(15)).toString();
+		newInput = "";
 	} else if (input.length == 1) {
-		input = [operator(parseFloat(input).toString())];
+		input = [parseFloat(operator(input).toPrecision(15).toString())];
 		inputbox.value = input.toString();
+	} else if (input.length % 2 == 1 && newInput.length == 0) {
+		input[input.length - 1] = parseFloat(operator(input[input.length - 1]).toPrecision(15).toString());
+		inputbox.value = input[input.length - 1].toString();
 	}
 }
 
@@ -217,4 +225,8 @@ function ln(n) {
 	Math.log(n);
 }
 
-function 
+function pi() {
+ 	Math.PI;
+ } 
+
+ 

@@ -29,8 +29,9 @@ var marker = new google.maps.Marker({
 	position: chappalajalisco,
 	map: map,
 	animation: google.maps.Animation.DROP,
-	// label:{fontSize:"60", text:"🌮"},
+	// label:{fontSize:"60", text:"Click the taco"},
 	icon: "img/untitled.svg"
+	// opacity: 0 
 })
 
 var infowindow = new google.maps.InfoWindow({
