@@ -3,11 +3,30 @@
 	<title></title>
 </head>
 <body>
+	<h1 class='codeup main-header'>Here's a heading</h1>
+	<p class='codeup info' id='graf'>Here's a paragraph</p>
+	<ul>
+		<li class="bullets" id="1">bullet item</li>
+		<li class="bullets" id="2">bullet item</li>
+		<li class="bullets" id="3">bullet item</li>
+	</ul>
+	<p class='info' id='codeup'>duplicate id paragraph</p>
+
 	<script type="text/javascript" src="js/jquery-3.2.1.js"></script>
 	<script type="text/javascript">
-	$('document').ready(function(){
-		alert('Finished Loading!');
-	});
+		$('h1').click(function(){
+			$('h1').css('background-color', 'yellow');
+		})
+		$('p').dblclick(function() {
+			$(this).css('font-size', '18px');
+		})
+		$('li').hover(
+			function() {
+	        	$(this).css('color', 'red');
+	    			},
+	    	function() {
+	        	$(this).css('color', 'black');
+   		})
 	</script>
 </body>
 </html>

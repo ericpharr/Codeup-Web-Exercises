@@ -210,23 +210,126 @@ function identity(n){
 }
 
 function sqrt(n) {
-	Math.sqrt(n);
+	return Math.sqrt(n);
 }
 
 function cubert(n) {
-	Math.pow(n, 1/3);
+	return Math.pow(n, 1/3);
 }
 
-function ythrootx (x, y) {
-	Math.pow(n, 1/y);
+function ythRootX (x, y) {
+	return Math.pow(n, 1/y);
 }
 
 function ln(n) {
-	Math.log(n);
+	return Math.log(n);
+}
+
+function log10(n) {
+	return Math.log(n)/Math.log(10);
+}
+
+function log2(n) {
+	return Math.log(n)/Math.log(2);
+}
+
+function logY(n, y) {
+	return Math.log(n)/Math.log(y);
+}
+
+function reciprocal(n) {
+	return 1/n;
+}
+
+function square(n) {
+	return Math.pow(n, 2);
+}
+
+function cube(n) {
+	return Math.pow(n, 3);
+}
+
+function xToYthPower(x, y) {
+	return Math.pow(x, y);
+}
+
+function e() {
+	return Math.E;
 }
 
 function pi() {
- 	Math.PI;
- } 
+	return Math.PI;
+}
 
- 
+function sinRad(n) {
+	return Math.sin(n);
+}
+
+function cosRad(n) {
+	return Math.cos(n);
+}
+
+function tanRad(n) {
+	return Math.tan(n);
+}
+
+function sinDeg(n) {
+	return Math.sin(n * (Math.PI/180));
+}
+
+function cosDeg(n) {
+	return Math.cos(n * (Math.PI/180));
+}
+
+function tanDeg(n) {
+	return Math.tan(n * (Math.PI/180));
+}
+
+function sinh(n) {
+	return (1 - Math.pow(Math.E, -2* n))/(2 * Math.pow(Math.E, -n));
+}
+
+function cosh(n) {
+	return (1 + Math.pow(Math.E, -2* n))/(2 * Math.pow(Math.E, -n));
+}
+
+function tanh(n) {
+	return (1 - Math.pow(Math.E, -2* n))/(2 * Math.pow(Math.E, -n));
+}
+
+function asinRad(n) {
+	return Math.asin(n);
+}
+
+function acosRad(n) {
+	return Math.acos(n);
+}
+
+function atanRad(n) {
+	return Math.atan(n);
+}
+
+function asinDeg(n) {
+	return Math.asin(n * (Math.PI/180));
+}
+
+function acosDeg(n) {
+	return Math.acos(n * (Math.PI/180));
+}
+
+function atanDeg(n) {
+	return Math.atan(n * (Math.PI/180));
+}
+
+function asinh(n) {
+	return Math.log(n + Math.pow(Math.pow(n, 2) + 1, 1/2));
+}
+
+function acosh(n) {
+	return Math.log(n + Math.pow(Math.pow(n, 2) - 1, 1/2));
+}
+
+function atanh(n) {
+	return (1/2) * Math.log(Math.pow((1 + n)/(1 - n), 1/2));
+}
+
