@@ -59,6 +59,10 @@
 		</style>
 	</head>
 	<body>
+		<div class="faq newsletter">
+			<h3>Would you like to sign up for our newsletter?</h3><span>x</span>
+		</div>
+
 		<main>
 			<div class="headings">
 				<h1>National Parks FAQ</h1>
@@ -116,13 +120,62 @@
 				</div>
 				<br>
 			</dl>
+			<br>
+			<div class="faq">
+				<h3>Facts about Big Bend National Park</h3>
+				<ul class="invisible">
+					<li>On July 1, 1944 Big Bend National Park opens for the first time.</li>
+					<li>Over 100 species of plants are found here.</li>
+					<li>More than 450 species of birds have been recorded here, and 75 species of mammals have been observed.</li>
+					<li>The highest temperature was 114 degrees in 1982, and the record for the lowest temperature was 10 degrees in 1989.</li>
+				</ul>
+			</div>
+			<br>
+			<div class="faq">
+				<h3>Facts about Redwood National Park</h3>
+				<ul class="invisible">
+					<li>Redwood National Park is the home for many wild lions, bears and elk.  </li>
+					<li>The Endor scenes for Star Wars Episode 6: Return of the Jedi were filmed there.</li>
+					<li>Redwood trees can reach up to 300 feet or higher.</li>
+					<li>The amount of carbon in the upper two meters of soil alone is 14 million metric tons.</li>
+				</ul>
+			</div>
+			<br>
+			<div class="faq">
+				<h3>Facts about the Grand Canyon</h3>
+				<ul class="invisible">
+					<li>The Grand Canyon is found in the US state of Arizona.</li>
+					<li>Many people consider it to be one of the seven wonders of the natural world.</li>
+					<li>The Grand Canyon is 277 miles (446 kilometres) in length.</li>
+					<li>At its widest point the Grand Canyon stretches 18 miles (29 kilometres) across.</li>
+				</ul>
+			</div>
+			<button type="button" class="stylebutton">Style button.</button>
 		</main>
 		<script type="text/javascript" src="js/jquery-3.2.1.js"></script>
 		<script type="text/javascript">
 			$('dt').click(function(event){
 				// event.preventDefault();
-				$(this).next().toggleClass('invisible');
+				$(this).next().slideToggle(200);
 				// $('.invisible').toggleClass('invisible');
+			})
+			$('button').click(function (e) {
+				$('ul').each(function(index, element){
+					$(this).children().last().css('background-color', 'yellow')
+				})
+			})
+			$('h3').click(function (e) {
+					$(this).next().children('li').css('font-weight', 'bold');
+			})
+			$('li').click(function () {
+				$(this).parent().children().first().css('color', 'blue');
+			})
+			$('.newsletter').children('span').click(function(){
+				$(this).parent().hide();
+			})
+
+			$('h3').click(function (){
+					$(this).next().slideToggle(200);
 			})
 		</script>
 	</body>
