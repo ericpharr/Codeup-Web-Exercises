@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>National Parks FAQ</title>
+		<link rel="stylesheet" href="/css/master.css">
+		<link href="https://fonts.googleapis.com/css?family=Roboto+Slab|Roboto:300, 300i" rel="stylesheet">
+		<style media="screen">
+			body {
+				background-image: url("/img/canyon.jpg");
+			}
+
+			.headings {
+				border: 1px solid black;
+				border-radius: 7px;
+				background-color: papayawhip;
+				padding: 10px 10px 10px 25px;
+				opacity: .9;
+			}
+
+			h1, h2 {
+				font-family: "Roboto", sans-serif;
+			}
+
+			dt, dd {
+				font-family: "Roboto Slab", serif;
+			}
+
+			main {
+				width: 50%;
+				padding-left: 25%;
+			}
+
+			h1 {
+				font-size: 3em;
+			}
+			h2 {
+				font-size: 1.3em;
+				font-style: italic;
+			}
+			.invisible {
+				display: none;
+			}
+			dt {
+				font-size: 1.5em;
+			}
+
+			.faq {
+				border: 1px solid black;
+				border-radius: 7px;
+				padding: 10px 10px 10px 25px;
+				background-color: papayawhip;
+				opacity: .9;
+			}
+
+			dd{
+				font-size: 1em
+			}
+		</style>
+	</head>
+	<body>
+		<main>
+			<div class="headings">
+				<h1>National Parks FAQ</h1>
+				<h2>The following are actual frequently asked questions to Google, based on Google autocomplete. Click each link to find the answer on Google.</h2>
+			</div>
+			<dl class="">
+				<div class="faq">
+					<dt>What is a national park?</dt>
+					<dd class="invisible">Good question! Find your answer <a target="_blank" href="http://lmgtfy.com/?q=what+is+a+national+park">here</a>!</dd>
+			</div>
+				<br>
+				<div class="faq">
+					<dt>What is Yellowstone National Park?</dt>
+					<dd class="invisible">Good question! Find your answer <a target="_blank" href="http://lmgtfy.com/?q=what+is+yellowstone+national+park">here</a>!</dd>
+				</div>
+				<br>
+				<div class="faq">
+					<dt>What national parks are in Texas?</dt>
+					<dd class="invisible">Good question! Find your answer <a target="_blank" href="http://lmgtfy.com/?q=what+national+parks+are+in+texas">here</a>!</dd>
+				</div>
+				<br>
+				<div class="faq">
+					<dt>What national park is in California</dt>
+					<dd class="invisible">Good question! Find your answer <a target="_blank" href="http://lmgtfy.com/?q=what+national+park+is+in+California">here</a>!</dd>
+				</div>
+				<br>
+				<div class="faq">
+					<dt>How many national parks are there?</dt>
+					<dd class="invisible">Good question! Find your answer <a target="_blank" href="http://lmgtfy.com/?q=how+many+national+parks">here</a>!</dd>
+				</div>
+				<br>
+				<div class="faq">
+					<dt>Are national parks free?</dt>
+					<dd class="invisible">Good question! Find your answer <a target="_blank" href="http://lmgtfy.com/?q=are+national+parks+free">here</a>!</dd>
+				</div>
+				<br>
+				<div class="faq">
+					<dt>Are national parks open on holidays?</dt>
+					<dd class="invisible">Good question! Find your answer <a target="_blank" href="http://lmgtfy.com/?q=are+national+parks+open+on+holidays">here</a>!</dd>
+				</div>
+				<br>
+				<div class="faq">
+					<dt>How big is Big Bend National Park</dt>
+					<dd class="invisible">Good question! Find your answer <a target="_blank" href="http://lmgtfy.com/?q=how+big+is+big+bend+national+park">here</a>!</dd>
+				</div>
+				<br>
+				<div class="faq">
+					<dt>Where is Yellowstone National Park?</dt>
+					<dd class="invisible">Good question! Find your answer <a target="_blank" href="http://lmgtfy.com/?q=where+is+yellowstone+national+park">here</a>!</dd>
+				</div>
+				<br>
+				<div class="faq">
+					<dt>Where is Yosemite National Park</dt>
+					<dd class="invisible">Good question! Find your answer <a target="_blank" href="http://lmgtfy.com/?q=where+is+yosemite+national+park">here</a>!</dd>
+				</div>
+				<br>
+			</dl>
+		</main>
+		<script type="text/javascript" src="js/jquery-3.2.1.js"></script>
+		<script type="text/javascript">
+			$('dt').click(function(event){
+				// event.preventDefault();
+				$(this).next().toggleClass('invisible');
+				// $('.invisible').toggleClass('invisible');
+			})
+		</script>
+	</body>
+</html>

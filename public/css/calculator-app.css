@@ -1,13 +1,13 @@
 body {
 		background-image: url("/img/light-grey-gradient.jpg");
-		font-family: "Helvetica Neue", Narrow, sans serif;
+		font-family: "HelveticaNeue-UltraLight", sans-serif;
 }
 
 .jumbotron {
 	background: transparent;
 }
 
-.calc { 
+.calc {
 	height: 320px;
 	width: 232px;
 	border: 1px transparent #888888;
