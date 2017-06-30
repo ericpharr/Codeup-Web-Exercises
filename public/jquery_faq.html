@@ -3,7 +3,7 @@
 	<head>
 		<meta charset="utf-8">
 		<title>National Parks FAQ</title>
-		<link rel="stylesheet" href="/css/master.css">
+		<!-- <link rel="stylesheet" href="/css/master.css"> -->
 		<link href="https://fonts.googleapis.com/css?family=Roboto+Slab|Roboto:300, 300i" rel="stylesheet">
 		<style media="screen">
 			body {
@@ -60,9 +60,12 @@
 	</head>
 	<body>
 		<div class="faq newsletter">
-			<h3>Would you like to sign up for our newsletter?</h3><span>x</span>
+			<span>⊗</span>
+			<h3>Would you like to sign up for our newsletter?</h3>
 		</div>
-
+		<div class="faq invisible" id="register">
+			<h2>Please Register!</h2>
+		</div>
 		<main>
 			<div class="headings">
 				<h1>National Parks FAQ</h1>
@@ -177,6 +180,9 @@
 			$('h3').click(function (){
 					$(this).next().slideToggle(200);
 			})
+
+			$('#register').delay(8000).fadeIn()
+
 		</script>
 	</body>
 </html>
