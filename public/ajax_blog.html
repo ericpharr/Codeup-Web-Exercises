@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Eric's Blog</title>
+		<link rel="stylesheet" href="css/bootstrap.min.css">
+	</head>
+	<body>
+		<div id="posts" class="container">
+
+		</div>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+		<script type="text/javascript">
+			// (function (){
+				"use strict";
+
+				var request = $.get("data/blog.json");
+
+				request.done(function (data){
+					data.forEach(function(blog){
+						$('#posts').append("<h2>" + blog.title + "</h2>" + "<p><em>Date: </em>" + blog.date + "</p><p>" + blog.content + "</p><br>" + "<p><em>Categories: </em>" + blog.categories.join(" ") + "</p>");
+					})
+				}).fail(function(jqXhr, status, error){
+					console.log(status);
+					console.log(error);
+				})
+			// })
+		</script>
+	</body>
+</html>
