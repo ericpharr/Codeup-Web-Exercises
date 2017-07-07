@@ -3,21 +3,58 @@
 	<head>
 		<meta charset="utf-8">
 		<title>Weather Map</title>
+		<link rel="stylesheet" href="css/bootstrap.min.css">
+		<style media="screen">
+			body {
+				background-color: #b2ccff;
+			}
+			.jumbotron {
+				text-align: center;
+				padding: 0;
+				margin: 0;
+				background-color: #b2ccff;
+			}
+
+			.weather {
+				border: 1px solid black;
+				text-align: center;
+				padding: 20px 5px;
+				background-color: #a3ccff;
+			}
+
+			#map {
+				width: 100%;
+				height: 400px;
+				border: 1px solid black;
+				border-top: 0px;
+			}
+		</style>
 	</head>
+	<div class="jumbotron">
+		<h1>Weather Application</h1>
+		<h3>San Antonio</h3>
+	</div>
+	<div class="container">
+		<div class="row">
+			<div id="day1" class="weather col-md-4 col-lg-4 col-sm-4">
+
+			</div>
+			<div id="day2" class="weather col-md-4 col-lg-4 col-sm-4">
+
+			</div>
+			<div id="day3" class="weather col-md-4 col-lg-4 col-sm-4">
+
+			</div>
+		</div>
+		<div class="row">
+			<div id="map">
+
+			</div>
+		</div>
+	</div>
 	<body>
 		<script type="text/javascript" src="http://code.jquery.com/jquery-2.2.4.min.js"></script>
-		<script type="text/javascript">
-			'use strict';
-
-			$.get("http://api.openweathermap.org/data/2.5/forecast/daily",{
-				APPID: "d82583cede0414e303c1d718522690fd",
-				q: "San Antonio, TX"
-			}).done(function(data){
-				console.log(data);
-			}).fail(function(request, status, error){
-				console.log(status);
-				console.log(error);
-			});
-		</script>
+		<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAfY4vEDIjDJgAV0YeB7W9KhZqDbIPvAyA"></script>
+		<script type="text/javascript" src="js/weather_map.js"></script>
 	</body>
 </html>
