@@ -1,0 +1,153 @@
+<html>
+<head>
+	<title>Calculator</title>
+	<link rel="stylesheet" type="text/css" href="css/calc-bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="css/calculator-app.css">
+	<link href="https://fonts.googleapis.com/css?family=Open+Sans:300" rel="stylesheet">
+
+</head>
+<style media="screen">
+	.calc {
+		width: 574px;
+	}
+
+	.btn-calc {
+		width: 10%;
+	}
+
+	.btn-calc-zero{
+		width: 20%;
+		border-radius: 0px;
+	}
+
+	.math-img {
+		height: 1.3em;
+	}
+
+	#reciprocal {
+		height: 1.5em
+	}
+
+	.inputbox {
+		font-family: "HelveticaNeue-Thin", sans-serif;
+	}
+
+
+</style>
+<body>
+	<div class="jumbotron container"><h1>Apple Calculator Clone</h1></div>
+	<main class='calc container'>
+		<div class='row'>
+			<input type="text" class="inputbox col-md-12" placeholder="0"readonly>
+
+		</div>
+		<div class='row'>
+			<button class='btn-calc btn <!-- col-md-2 col-sm-1 col-xs-1 -->'>(</button>
+			<button class='btn-calc btn <!-- col-md-2 col-sm-1 col-xs-1 -->'>)</button>
+			<button class='btn-calc btn <!-- col-md-2 col-sm-1 col-xs-1 -->'
+				data-type="memory">mc</button>
+			<button class='btn-calc btn <!-- col-md-2 col-sm-1 col-xs-1 -->'
+				data-type="memory">m+</button>
+			<button class='btn-calc btn <!-- col-md-2 col-sm-1 col-xs-1 -->'
+				data-type="memory">m-</button>
+			<button class='btn-calc btn <!-- col-md-2 col-sm-1 col-xs-1 -->'
+				data-type="memory">mr</button>
+			<button class='btn-calc btn <!-- col-md-2 col-sm-1 col-xs-1 -->'>AC</button>
+			<button class='btn-calc btn <!-- col-md-2 col-sm-1 col-xs-1 -->'
+				data-type="operation">+/-</button>
+			<button class='btn-calc btn <!-- col-md-2 col-sm-1 col-xs-1 -->'
+				data-type="operation">%</button>
+			<button class='btn-calc btn-op <!-- col-md-2 col-sm-1 col-xs-1 -->'>÷</button>
+		</div>
+		<div class='row'>
+			<button class='btn-calc btn <!-- col-md-2 col-sm-1 col-xs-1 -->'
+				data-type="2nd">2<sup><small>nd</small></sup></button>
+			<button class='btn-calc btn <!-- col-md-2 col-sm-1 col-xs-1 -->'
+				data-type="operation">x<sup><small>2</small></sup></button>
+			<button class='btn-calc btn <!-- col-md-2 col-sm-1 col-xs-1 -->'
+				data-type="operation">x<sup><small>3</small></sup></button>
+			<button class='btn-calc btn <!-- col-md-2 col-sm-1 col-xs-1 -->'
+				data-type="operation-two-input">x<sup><small>y</small></sup></button>
+			<button class='btn-calc btn <!-- col-md-2 col-sm-1 col-xs-1 -->'
+				data-type="operation">e<sup><small>x</small></sup></button>
+			<button class='btn-calc btn <!-- col-md-2 col-sm-1 col-xs-1 -->'
+				data-type="operation">10<sup><small>x</small></sup></button>
+			<button class='btn-calc btn <!-- col-md-2 col-sm-1 col-xs-1 -->'
+				data-type="number">7</button>
+			<button class='btn-calc btn <!-- col-md-2 col-sm-1 col-xs-1 -->'
+				data-type="number">8</button>
+			<button class='btn-calc btn <!-- col-md-2 col-sm-1 col-xs-1 -->'
+				data-type="number">9</button>
+			<button class='btn-calc btn-op <!-- col-md-2 col-sm-1 col-xs-1 -->'>×</button>
+		</div>
+		<div class='row'>
+			<button class='btn-calc btn <!-- col-md-2 col-sm-1 col-xs-1 -->'
+				data-type="operation" data-op="reciprocal">
+				<img id="reciprocal" class='math-img'src="img/reciprocal.svg" alt="reciprocal"></button>
+			<button class='btn-calc btn <!-- col-md-2 col-sm-1 col-xs-1 -->'
+				data-type="operation" data-op="squareroot">
+				<img class='math-img'src="img/squareroot.svg" alt="square root"></button>
+			<button class='btn-calc btn <!-- col-md-2 col-sm-1 col-xs-1 -->'
+				data-type="operation" data-op="cuberoot">
+				<img class='math-img'src="img/cuberoot.svg" alt="cube root"></button>
+			<button class='btn-calc btn <!-- col-md-2 col-sm-1 col-xs-1 -->'
+				data-type="operation-two-input" data-op="ythroot">
+				<img class='math-img'src="img/ythroot.svg" alt="yth root"></button>
+			<button class='btn-calc btn <!-- col-md-2 col-sm-1 col-xs-1 -->'
+				data-type="operation" data-op="ln">ln</button>
+			<button class='btn-calc btn <!-- col-md-2 col-sm-1 col-xs-1 -->'
+				data-type="operation">log<sub><small>10</small></sub></button>
+			<button class='btn-calc btn <!-- col-md-2 col-sm-1 col-xs-1 -->'
+				data-type="number">4</button>
+			<button class='btn-calc btn <!-- col-md-2 col-sm-1 col-xs-1 -->'
+				data-type="number">5</button>
+			<button class='btn-calc btn <!-- col-md-2 col-sm-1 col-xs-1 -->'
+				data-type="number">6</button>
+			<button class='btn-calc btn-op <!-- col-md-2 col-sm-1 col-xs-1 -->'>−</button>
+		</div>
+		<div class='row'>
+			<button class='btn-calc btn <!-- col-md-2 col-sm-1 col-xs-1 -->'
+				data-type="operation">x!</button>
+			<button class='btn-calc btn <!-- col-md-2 col-sm-1 col-xs-1 -->'
+				data-type="operation">sin</button>
+			<button class='btn-calc btn <!-- col-md-2 col-sm-1 col-xs-1 -->'
+				data-type="operation">cos</button>
+			<button class='btn-calc btn <!-- col-md-2 col-sm-1 col-xs-1 -->'
+				data-type="operation">tan</button>
+			<button class='btn-calc btn <!-- col-md-2 col-sm-1 col-xs-1 -->'
+				data-type="constant">e</button>
+			<button class='btn-calc btn <!-- col-md-2 col-sm-1 col-xs-1 -->'
+				data-type="operation-two-input">EE</button>
+			<button class='btn-calc btn <!-- col-md-2 col-sm-1 col-xs-1 -->'
+				data-type="number">1</button>
+			<button class='btn-calc btn <!-- col-md-2 col-sm-1 col-xs-1 -->'
+				data-type="number">2</button>
+			<button class='btn-calc btn <!-- col-md-2 col-sm-1 col-xs-1 -->'
+				data-type="number">3</button>
+			<button class='btn-calc btn-op <!-- col-md-2 col-sm-1 col-xs-1 -->'>+</button>
+		</div>
+		<div class='row'>
+			<button class='btn-calc btn <!-- col-md-2 col-sm-1 col-xs-1 -->'>Rad</button>
+			<button class='btn-calc btn <!-- col-md-2 col-sm-1 col-xs-1 -->'
+				data-type="operation">sinh</button>
+			<button class='btn-calc btn <!-- col-md-2 col-sm-1 col-xs-1 -->'
+				data-type="operation">cosh</button>
+			<button class='btn-calc btn <!-- col-md-2 col-sm-1 col-xs-1 -->'
+				data-type="operation">tanh</button>
+			<button class='btn-calc btn <!-- col-md-2 col-sm-1 col-xs-1 -->'
+				data-type="constant">π</button>
+			<button class='btn-calc btn <!-- col-md-2 col-sm-1 col-xs-1 -->'
+				data-type="constant">Rand</button>
+			<button class='btn-calc btn btn-calc-zero <!-- col-md-4 col-sm-2 col-xs-2 -->'
+				data-type="number">0</button>
+			<button class='btn-calc btn <!-- col-md-2 col-sm-1 col-xs-1 -->'>.</button>
+			<button class='btn-calc btn-op btn-calc-equals <!-- col-md-2 col-sm-1 col-xs-1 -->'>=</button>
+		</div>
+	</main>
+
+
+	<script type="text/javascript" src="js/jquery-3.2.1.js"></script>
+	<!-- <script type="text/javascript" src="js/boostrap.min.js"></script> -->
+	<script type="text/javascript" src="js/calculator-app.js"></script>
+</body>
+</html>

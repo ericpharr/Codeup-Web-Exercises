@@ -1,3 +1,4 @@
+(function(){
 'use strict';
 
 var latLng = {lat: 29.419178086564326, lng: -98.49337661376956};
@@ -94,3 +95,4 @@ function search(){
 	 }
 	});
 }
+})()

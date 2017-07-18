@@ -12,7 +12,7 @@ Kept as simple as possible:
 
 */
 var buttons = document.querySelectorAll('.btn-calc');
-var newInput = "";												   
+var newInput = "";
 var inputbox = document.getElementsByClassName('inputbox')[0];
 var input = [];
 /*
@@ -25,27 +25,31 @@ with additional logic handled by other functions.
 */
 buttons.forEach(function(button) {
 	button.addEventListener('click', function(){
+		console.log(button.innerText);
+		console.log(button.dataset.op);
 		if (!isNaN(button.innerText) && input.length == 1){		 //prevents infinite loop if user forgets to clear after previous operation
 			input = [];
 			newInput = button.innerText;
 			inputbox.value = newInput;
-		} else if (!isNaN(button.innerText)) {		             //checks for input of numbers
+		} else if (!isNaN(button.innerText) && button.innerText.length > 0) {		             //checks for input of numbers
 				newInput += button.innerText;
 				inputbox.value = newInput;
-		} else {									            //checks for input of operators
+		} else if (button.innerText == ""){
+			selectOperator(button.dataset.op);
+		} else {
 			selectOperator(button.innerText);
-		}
+		}							            //checks for input of operators
 	})
 })
-/* 
+/*
 
 selectOperator function:
 
 This parses all non-numeric inputs.
 
 */
-function selectOperator(symbol){							        
-	switch(symbol) {										        
+function selectOperator(symbol){
+	switch(symbol) {
 		case "+":
 			basicOperator("+");
 			break;
@@ -55,7 +59,7 @@ function selectOperator(symbol){
 		case "÷":
 			basicOperator("÷");
 			break;
-		case "x": 
+		case "x":
 			basicOperator("x");
 			break;
 		case "=":
@@ -73,8 +77,36 @@ function selectOperator(symbol){
 		case "AC":
 			clear();
 			break;
+		case "x2":
+			specialOperator(square);
+			break;
+		case "x3":
+			specialOperator(cube);
+			break;
+		case "ex":
+			specialOperator(etox);
+			break;
+		case "10x":
+			specialOperator(tentox);
+			break;
+		case "reciprocal":
+			specialOperator(reciprocal);
+			break;
+		case "squareroot":
+			console.log("rooted!");
+			specialOperator(sqrt);
+			break;
+		case "cuberoot":
+			specialOperator(cubert);
+			break;
+		case "ln":
+			specialOperator(ln);
+			break;
+		case "log10":
+			specialOperator(log10);
+			break;
 	}
-}	
+}
 
 function clear(){
 	input = [];
@@ -99,7 +131,7 @@ to best emulate the functionality of standard calculators
 
 */
 function equals() {
-	if (input.length > 0 && newInput.length > 0) {	
+	if (input.length > 0 && newInput.length > 0) {
 		input.push(newInput);
 		input = evaluate(input);
 		inputbox.value = input.toString();
@@ -115,14 +147,14 @@ function equals() {
 /*
 
 basicOperator function:
-Handles operations which requires two inputs and pushes them onto the 
+Handles operations which requires two inputs and pushes them onto the
 input array for evaluation.
 
 May also need to be used for similar, non-basic operations which require two inputs
 to extend calculator functionality to include scientific functions.
 
 */
-function basicOperator(symbol) {					//Basic operator function takes operator symbol as a string, and pushes 
+function basicOperator(symbol) {					//Basic operator function takes operator symbol as a string, and pushes
 	if (newInput.length > 0){
 		input.push(newInput, symbol);
 		newInput = "";
@@ -148,7 +180,7 @@ though the code will possibly need to be retained for some cases.
 function evaluate(x) {
 	var tmp;
 	// console.log(x);
-	
+
 	while (x.length > 1){
 		for (var i = 0; i < x.length+1; i++){
 			if (x[i] == "x" || x[i] == "÷") {
@@ -168,7 +200,7 @@ function evaluate(x) {
 		}
 	}
 
-	return [parseFloat(x[0].toPrecision(15).toString())];	//Returns value to 15 decimal point precision, 
+	return [parseFloat(x[0].toPrecision(15).toString())];	//Returns value to 15 decimal point precision,
 }															//This could be extended to allow user to change number of decimals to display.
 
 
@@ -176,8 +208,8 @@ function evaluate(x) {
 
 specialOperator function:
 
-The special operator function changes newInput variable and display before it is pushed onto the input array. 
-All functions compatible with the specialOperator function are listed below it. 
+The special operator function changes newInput variable and display before it is pushed onto the input array.
+All functions compatible with the specialOperator function are listed below it.
 
 Most extensions to calculator functionality can go here.
 
@@ -247,6 +279,14 @@ function square(n) {
 
 function cube(n) {
 	return Math.pow(n, 3);
+}
+
+function etox(n) {
+	return Math.pow(Math.E, n);
+}
+
+function tentox(n) {
+	return Math.pow(10, n)
 }
 
 function xToYthPower(x, y) {
@@ -332,4 +372,3 @@ function acosh(n) {
 function atanh(n) {
 	return (1/2) * Math.log(Math.pow((1 + n)/(1 - n), 1/2));
 }
-
