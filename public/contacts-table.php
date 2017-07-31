@@ -37,12 +37,12 @@
                     <td>Name</td>
                     <td>Number</td>
                 </thead>
-                <?php foreach($contacts as $contact) { ?>
+                <?php foreach($contacts as $contact) : ?>
                 <tr>
-                    <td><?php echo $contact['name'] ?></td>
-                    <td><?php echo $contact['number'] ?></td>
+                    <td><?= $contact['name'] ?></td>
+                    <td><?= $contact['number'] ?></td>
                 </tr>
-                <?php } ?>
+                <?php endforeach ?>
             </table>
         </div>
     </body>

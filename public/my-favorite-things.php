@@ -15,9 +15,9 @@
             background-color: lightgray;
         }
         table {
-            border: 1px solid black;
+            border-collapse: collapse;
             display: flex;
-            justify-content: center;
+            align-content: center;
         }
         td {
             border: 1px solid black;
@@ -31,8 +31,8 @@
     <h1>My Favorite things</h1>
 
     <table>
-        <?php foreach($favoriteThings as $thing){ ?>
-        <tr><td><?php echo $thing; ?></td></tr>
-        <?php } ?>
+        <?php foreach($favoriteThings as $thing): ?>
+        <tr><td><?= $thing ?></td></tr>
+        <?php endforeach ?>
     </table>
 </body>

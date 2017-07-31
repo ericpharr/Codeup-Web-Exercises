@@ -4,7 +4,7 @@
 
     $nouns = ["concept", "mixture", "studio", "device", "nature", "owner", "department", "reality", "platform", "media"];
 
-    function randomElement($array) 
+    function randomElement($array)
     {
         return $array[rand(0, count($array)-1)];
     }
@@ -24,5 +24,5 @@
     </title>
 </head>
 <body>
-    <h1> <?php echo serverName($adjectives, $nouns); ?>
+    <h1> <?= serverName($adjectives, $nouns) ?>
 </body>
