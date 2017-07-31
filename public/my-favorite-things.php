@@ -1,7 +1,11 @@
 <?php
+    function pageController(){
+        $favoriteThings = ["guitar", "travel", "learning", "music", "puzzles"];
 
-    $favoriteThings = ["guitar", "travel", "learning", "music", "puzzles"];
+        return ["favoriteThings" => $favoriteThings];
+    }
 
+    extract(pageController());
 ?>
 
 <!DOCTYPE html>

@@ -1,8 +1,17 @@
 <?php
+    function pageController()
 
-    $adjectives = ["funny", "cold", "hot", "dead", "magic", "terrific", "wild", "impeccable", "fine", "super"];
+    {
+        $adjectives = ["funny", "cold", "hot", "dead", "magic", "terrific", "wild", "impeccable", "fine", "super"];
 
-    $nouns = ["concept", "mixture", "studio", "device", "nature", "owner", "department", "reality", "platform", "media"];
+        $nouns = ["concept", "mixture", "studio", "device", "nature", "owner", "department", "reality", "platform", "media"];
+
+        return [
+            "adjectives" => $adjectives,
+            "nouns" => $nouns
+        ];
+    }
+
 
     function randomElement($array)
     {
@@ -13,6 +22,8 @@
     {
         return randomElement($adjectives) . " " . randomElement($nouns);
     }
+
+    extract(pageController());
 
 ?>
 

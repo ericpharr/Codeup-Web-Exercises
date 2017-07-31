@@ -1,5 +1,5 @@
 <?php
-
+    function pageController(){
     $contacts = [
       'contact1'=> [
           "name" => "Jack Blank",
@@ -15,6 +15,11 @@
       ]
 
     ];
+
+    return ["contacts" => $contacts];
+    }
+
+    extract(pageController());
 ?>
 
 <!DOCTYPE html>
@@ -23,16 +28,11 @@
         <meta charset="utf-8">
         <title>Contacts</title>
         <link rel="stylesheet" href="css/bootstrap.min.css">
-        <style media="screen">
-            td{
-                text-align: center;
-            }
-        </style>
     </head>
     <body>
-        <h1 class="jumbotron">Contacts</h1>
+        <h1 class="jumbotron text-center">Contacts</h1>
         <div class="container">
-            <table class="table table-striped table-bordered table-condensed table-responsive">
+            <table class="table table-striped table-bordered table-condensed table-responsive text-center">
                 <thead>
                     <td>Name</td>
                     <td>Number</td>
