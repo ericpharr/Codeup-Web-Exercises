@@ -1,24 +1,24 @@
 <?php
 function pageController(){
-	$counter = 0;
 
-	$count = $_GET['count'];
+$count = isset($_GET['count']) ? $_GET['count'] : 99;
 
-	return [
-		'counter' => $counter;
-		'count' => $count;
-	]
+// $change = isset($_GET['change']) ? $_GET['change'] : "";
+
+// if ($change == 'up') {
+// 	$count += 1;
+// } elseif ($change == 'down'){
+// 	$count -= 1;
+// }
+
+return [
+	'count' => $count
+	// 'change' => $change
+];
+
 }
 
-function changeCounter(){
-	if ($count == 'up') {
-		return $counter ++ ;
-	} else {
-		return $counter -- ;
-	}
-}
-
-extract(pageController)
+extract(pageController());
  ?>
 
  <!DOCTYPE html>
@@ -28,7 +28,9 @@ extract(pageController)
  		<title></title>
  	</head>
  	<body>
- 		<a href="counter.php?count=up">up</a>
-		<a href="counter.php?count=down">down</a>
+		<h1><?= $count ?></h1>
+
+ 		<a href="counter.php?count=<?= $count + 1?>">up</a>
+		<strong><a href="counter.php?count=<?= $count - 1?>">down</a></strong>
  	</body>
  </html>
