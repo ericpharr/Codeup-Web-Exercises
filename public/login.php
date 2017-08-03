@@ -1,7 +1,9 @@
 <?php
 session_start();
 
-if (isset($_SESSION['logged_in_user'])) {
+require "functions.php";
+
+if (inputHas('logged_in_user')) {
 	header("Location: http://codeup.dev/authorized.php");
 	die();
 }
@@ -11,9 +13,9 @@ function pageController(){
 
 	$login = "";
 
-	$username = isset($_POST['username']) ? $_POST['username'] : "";
+	$username = inputHas('username') ? inputGet('username') : "";
 
-	$password = isset($_POST['password']) ? $_POST['password'] : "";
+	$password = inputHas('password') ? inputGet('password') : "";
 
 	if (!empty($username) && !empty($password)){
 		if (($username == 'guest' && $password == 'password')||($username == 'eric' && $password == 'password')){

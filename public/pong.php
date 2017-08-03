@@ -1,9 +1,12 @@
 <?php
+
+require_once 'functions.php';
+
 function pageController()
 {
-	$hits = isset($_GET['hits']) ? $_GET['hits'] : 0;
+	$hits = inputGet('hits');
 
-	$turn = isset($_GET['turn']) ? $_GET['turn'] : "";
+	$turn = inputGet('turn');
 
 	if ($turn == 'hit'){
 		$hits++;
@@ -28,8 +31,8 @@ extract(pageController());
  	</head>
  	<body>
 		<h1>PONG!</h1>
-		<h4><?= $hits ?></h4>
- 		<a href="ping.php?turn=hit&hits=<?= $hits ?>">HIT</a>
+		<h4><?= escape($hits) ?></h4>
+ 		<a href="ping.php?turn=hit&hits=<?= escape($hits) ?>">HIT</a>
  		<a href="ping.php?turn=miss$hits=0">MISS</a>
  	</body>
  </html>
