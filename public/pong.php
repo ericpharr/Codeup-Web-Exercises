@@ -23,7 +23,6 @@ function pageController()
 
 extract(pageController());
 
-var_dump(pageController());
  ?>
  <!DOCTYPE html>
  <html>
