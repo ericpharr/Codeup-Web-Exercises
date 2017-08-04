@@ -1,9 +1,11 @@
 <?php
 session_start();
 
-require "functions.php";
+require_once "../Auth.php";
+require_once "../Log.php";
+require_once "../Input.php";
 
-if (inputHas('logged_in_user')) {
+if (Auth::check()) {
 	header("Location: http://codeup.dev/authorized.php");
 	die();
 }
@@ -13,13 +15,12 @@ function pageController(){
 
 	$login = "";
 
-	$username = inputHas('username') ? inputGet('username') : "";
+	$username = Input::get('username');
 
-	$password = inputHas('password') ? inputGet('password') : "";
+	$password = Input::get('password');
 
 	if (!empty($username) && !empty($password)){
-		if (($username == 'guest' && $password == 'password')||($username == 'eric' && $password == 'password')){
-			$_SESSION['logged_in_user'] = true;
+		if (Auth::attempt($username, $password)){
 			header("Location: http://codeup.dev/authorized.php");
 			die();
 		} else {

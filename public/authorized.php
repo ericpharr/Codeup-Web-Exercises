@@ -1,6 +1,8 @@
 <?php
 session_start();
-if (!isset($_SESSION['logged_in_user'])){
+require_once "../Auth.php";
+
+if (!Auth::check()){
 	header("Location: http://codeup.dev/login.php");
 }
 
