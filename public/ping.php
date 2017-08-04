@@ -1,12 +1,13 @@
 <?php
 
-require_once 'functions.php';
+require_once '../Input.php';
 
 function pageController()
 {
-	$hits = inputGet('hits');
 
-	$turn = inputGet('turn');
+	$hits = Input::get('hits');
+
+	$turn = Input::get('turn');
 
 	if ($turn == 'hit'){
 		$hits++;
@@ -22,6 +23,8 @@ function pageController()
 }
 
 extract(pageController());
+var_dump(pageController());
+
  ?>
 <!DOCTYPE html>
 <html>
@@ -31,8 +34,8 @@ extract(pageController());
 	</head>
 	<body>
 		<h1>PING!</h1>
-		<h4><?= escape($hits) ?></h4>
-		<a href="pong.php?turn=hit&hits=<?= escape($hits) ?>">HIT</a>
+		<h4><?= $hits ?></h4>
+		<a href="pong.php?turn=hit&hits=<?= $hits ?>">HIT</a>
 		<a href="pong.php?turn=miss&hits=0">MISS</a>
 	</body>
 </html>
