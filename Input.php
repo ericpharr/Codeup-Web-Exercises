@@ -27,7 +27,12 @@ class Input
         if (isset($_REQUEST[$key])){
 		return $_REQUEST[$key];
     	}
-    	return null;
+    	return $default;
+    }
+
+    public static function escape($input)
+    {
+        return htmlspecialchars(strip_tags($input));
     }
 
     ///////////////////////////////////////////////////////////////////////////
