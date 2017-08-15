@@ -94,7 +94,6 @@ extract(pageController($dbc));
     <!-- Optional theme -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
 
-</style>
 </head>
 <body>
 
@@ -126,13 +125,13 @@ extract(pageController($dbc));
 
     <section class="container col-md-4">
         <h1>Add a National Park</h1>
-		<form class="" action="national_parks.php" method="post">
-			<input type="text" name="name" placeholder="Park Name" required>
-            <input type="text" name="location" placeholder="Location" required>
-            <input type="text" name="date_established" placeholder="Date Established" required>
-            <input type="text" name="area_in_acres" placeholder="Area (acres)" required>
-            <input type="textarea" name="description" placeholder="description" required>
-            <button type="submit" name="button">Submit</button>
+		<form class="form-group" action="national_parks.php" method="post">
+			<input class='col-md-4 form-control'type="text" name="name" placeholder="Park Name" required>
+            <input class='col-md-4 form-control'type="text" name="location" placeholder="Location" required>
+            <input class='col-md-4 form-control'type="text" name="date_established" placeholder="Date Established" required>
+            <input class='col-md-4 form-control'type="text" name="area_in_acres" placeholder="Area (acres)" required>
+            <input class='col-md-4 form-control'type="textarea" name="description" placeholder="description" required>
+            <button class='btn btn-primary col-md-3 col-md-offset-1'type="submit" name="button">Submit</button>
 		</form>
     </section>
 
