@@ -35,6 +35,30 @@ class Input
         return htmlspecialchars(strip_tags($input));
     }
 
+    public static function getString($key)
+    {
+        $input = self::get($key);
+
+        if (empty($input)){
+            throw new Exception("cannot be empty");
+
+        } else if (is_numeric($input) || !is_string($input)){
+            throw new Excpetion("Must be a string");
+        }
+        return $input;
+    }
+
+    public static function getNumber($key)
+    {
+        $input = self::get($key);
+
+        if (empty($input)){
+            throw new Exception("input can't be empty!");
+        } else if (!is_numeric($input)){
+            throw new Exception("Error: must be a number");
+        }
+        return $input;
+    }
     ///////////////////////////////////////////////////////////////////////////
     //                      DO NOT EDIT ANYTHING BELOW!!                     //
     // The Input class should not ever be instantiated, so we prevent the    //
